@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TestApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <%= yield %>
+    <div class="container">
+      <h3>Inline List</h3>
+      <ul class=" nav nav-tabs list-inline">
+        <li class="nav-item " style="<%= nav_item_style('lte') %>">
+          <%= link_to "LTE", "#", class: "nav-link ", style: "#{link_style('lte')}"%>
+        </li>
+        <li class="nav-item", style="<%= nav_item_style('wifi') %>">
+          <%= link_to "Wifi", "#", class: "nav-link ",style: "#{link_style('wifi')}"%>
+        </li>
+        <li class="nav-item", style="<%= nav_item_style('lan') %>">
+          <%= link_to "LAN", "#", class: "nav-link ",style: "#{link_style('lan')}"%>
+        </li>
+      </ul>
+    </div>
+
+  </body>
+</html>

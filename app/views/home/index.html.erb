@@ -1,2 +1,59 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div id="tab-1" class="container">
+  <ul class="nav nav-tabs">
+  	<li class=" active" id="lte">
+      <a class="lte-link" href="#1" data-toggle="tab">
+        LTE
+      </a>
+  	</li>
+  	<li id="wifi">
+      <a class="wifi-link"  href="#2" data-toggle="tab">
+        WIFI
+      </a>
+  	</li>
+  	<li class="" id="lan">
+      <a class="lan-link" href="#3" data-toggle="tab">
+        LAN
+      </a>
+  	</li>
+  </ul>
+	<div class="tab-content" style="margin: 10px;">
+    <div class="tab-pane active" id="1">
+      <h3>LTE tabs</h3>
+  	</div>
+  	<div class="tab-pane" id="2">
+      <h3>WIFI tabs</h3>
+  	</div>
+    <div class="tab-pane" id="3">
+      <h3>LAN tabs</h3>
+  	</div>
+  </div>
+</div>
+
+<script>
+  $("#lte").click(function(){
+    $("#wifi").removeClass("wifi-right");
+    $("#lte").removeClass("lte-right");
+    $("#wifi").addClass("wifi-left");
+    $("#lan").addClass("lan-left");
+    $(".lan-left").css({"border-radius": "0","margin-left": "-6px", "height": "32px"});
+    $("#lte").removeAttr('style');
+  });
+  $("#lan").click(function(){
+    $("#wifi").removeClass("wifi-left");
+    $("#lan").removeClass("lan-left");
+    $("#wifi").addClass("wifi-right");
+    $("#lte").addClass("lte-right");
+    $("#lan").removeAttr('style');
+    $(".lte-right").css({"border-radius": "0","margin-right": "-6px", "height": "32px"});
+  });
+  $("#wifi").click(function(){
+    $("#wifi").removeClass("wifi-left");
+    $("#lan").removeClass("lan-left");
+    $("#wifi").removeClass("wifi-right");
+    $("#lte").removeClass("lte-right");
+    $("#lte").addClass("lte-right");
+    $("#lan").addClass("lan-left");
+    $("#lte").removeAttr('style');
+    $("#lan").removeAttr('style');
+  });
+</script>
